@@ -59,7 +59,6 @@ void buildHeap(Heap *h)
 
 
 
-//done
 void init(Heap *h, int cap)
 {
     h->capacity = cap; 
@@ -114,10 +113,8 @@ void write(Heap *h, char *filename)
 }
 
 
-//open file and read in values through (insert)
 void read(Heap *h, char *filename)
 {
-    //open file and basically create heap from that. call BuildHeap
     if(!h)
     {
         cout<< "Heap is Null" << endl; 
@@ -219,7 +216,8 @@ void decreaseKey(Heap *h, int position, double newKey)
         cerr << "Error: Heap is Empty" << endl; 
         return; 
     }
-    position = position-1;// this is commented out since in a direct minheap implemenetation, position is 1-based
+
+    position = position-1; //since position is 1-based. 
     if(position> h->A.size() || position < 0 || newKey >= h->A.at(position)->key)
     {
         cerr << "Error: Invalid call to DecreaseKey" << endl;
